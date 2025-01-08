@@ -2,9 +2,7 @@ let x = 100;
 let y = 100;
 moveAmountY = 0;
 moveAmountX = 0;
-let r = 255;
-let g = 0;
-let b = 0;
+let colours = [255, 0, 0];
 
 function setup() {
     createCanvas(300, 300);
@@ -14,7 +12,7 @@ function setup() {
 function draw(){
     background(255);
     noStroke();
-    fill(r, g, b);
+    fill(colours[0], colours[1], colours[2]);
     circle(x, y, width * 2/3);
     y += moveAmountY;
     x += moveAmountX;
@@ -56,19 +54,8 @@ function keyPressed() {
         moveAmountX = 1;
         moveAmountY = 0;
     }
-
-    if(key === "a") {
-        if(r = 255){
-            r = 0;
-            g = 255;
-            b = 0;
-           }else if(g = 255) {
-            r = 0;
-            g = 0;
-            b = 255;
-           } 
-    }
 }
 
 function mouseClicked() {
+    colours.unshift(colours[2]);
 }
