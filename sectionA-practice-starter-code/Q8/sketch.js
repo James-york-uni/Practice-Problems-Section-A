@@ -2,7 +2,7 @@ let colours = [];
 
 function setup() {
     createCanvas(800, 400); 
-    for(c = 0; c < 15; c++) {      
+    for(c = 0; c < 1000; c++) {      
         colours.unshift(random(255));
         console.log(colours.length)
     }
@@ -17,8 +17,22 @@ function draw() {
 }
 
 function concSquares(x) {
-    for(f = 0; f <= 300; f += 100) {
-        square(x, height/2, height - f); 
+    for(f = 0; f <= 300; f += 100) {   
+            fill(colours[f],colours[f+1],colours[f+2]);
+            square(x, height/2, height - f); 
     }
     
+}
+
+function keyPressed() {
+    if(key === "r") {
+        for(c = 0; c < 1000; c++) {      
+            colours.unshift(random(255));
+            console.log(colours.length)
+        }
+        for(f = 0; f <= 300; f += 100) {   
+            fill(colours[f],colours[f+1],colours[f+2]);
+            square(x, height/2, height - f); 
+    }
+    }
 }
