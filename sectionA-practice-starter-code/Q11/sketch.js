@@ -18,3 +18,7 @@ function draw() {
         ellipse(x[n], y[n+1], 20, 20);
     }
 }
+
+function mouseClicked() {
+    
+}
